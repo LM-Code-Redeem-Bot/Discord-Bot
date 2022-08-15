@@ -1,7 +1,6 @@
 import discord
 import os
 import requests
-from keep_alive import keep_alive
 
 client = discord.Client()
 
