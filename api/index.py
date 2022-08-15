@@ -47,5 +47,25 @@ async def on_message(message):
           await message.channel.send('Please Wait For a Minute Untill You Enter Another...!!!')
           await message.channel.send('==================================')
 
+            
+from flask import Flask
+from threading import Thread
+
+app = Flask('')
+
+
+@app.route('/')
+def home():
+    return "Hello. I am alive!"
+
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
+            
 keep_alive()
 client.run(os.getenv('TOKEN'))
